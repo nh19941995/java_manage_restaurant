@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.BookingsEntity" table="bookings" schema="restaurant_manager">
+        <id name="id">
+            <column name="id" sql-type="int"/>
+        </id>
+        <property name="infoId">
+            <column name="info_id" sql-type="int"/>
+        </property>
+        <property name="tableId">
+            <column name="table_id" sql-type="int"/>
+        </property>
+        <property name="menuNameId">
+            <column name="menu_name_id" sql-type="int"/>
+        </property>
+        <property name="flag">
+            <column name="flag" sql-type="int"/>
+        </property>
+    </class>
+</hibernate-mapping>

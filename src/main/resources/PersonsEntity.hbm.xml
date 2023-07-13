@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.PersonsEntity" table="persons" schema="restaurant_manager">
+        <id name="id">
+            <column name="id" sql-type="int"/>
+        </id>
+        <property name="name">
+            <column name="name" sql-type="varchar(150)" length="150"/>
+        </property>
+        <property name="dateOfBirth">
+            <column name="date_of_birth" sql-type="date"/>
+        </property>
+        <property name="address">
+            <column name="address" sql-type="varchar(300)" length="300"/>
+        </property>
+        <property name="username">
+            <column name="username" sql-type="varchar(150)" length="150"/>
+        </property>
+        <property name="password">
+            <column name="password" sql-type="varchar(150)" length="150"/>
+        </property>
+        <property name="permission">
+            <column name="permission" sql-type="int"/>
+        </property>
+        <property name="email">
+            <column name="email" sql-type="varchar(250)" length="250"/>
+        </property>
+        <property name="dateCreat">
+            <column name="date_creat" sql-type="datetime"/>
+        </property>
+        <property name="dateUpdate">
+            <column name="date_update" sql-type="datetime"/>
+        </property>
+        <property name="flag">
+            <column name="flag" sql-type="int"/>
+        </property>
+    </class>
+</hibernate-mapping>

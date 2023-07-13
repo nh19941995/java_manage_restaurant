@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:mysql://localhost:3306/restaurant_manager</property>
+    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <property name="connection.username">root</property>
+    <property name="connection.password">1234567</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
+
+    <mapping resource="BookingsEntity.hbm.xml"/>
+    <mapping resource="BookingsInfoEntity.hbm.xml"/>
+    <mapping resource="DishEntity.hbm.xml"/>
+    <mapping resource="DishTypeEntity.hbm.xml"/>
+    <mapping resource="MenuEntity.hbm.xml"/>
+    <mapping resource="MenuNameEntity.hbm.xml"/>
+    <mapping resource="PermissionsEntity.hbm.xml"/>
+    <mapping resource="PersonsEntity.hbm.xml"/>
+    <mapping resource="SalariesEntity.hbm.xml"/>
+    <mapping resource="TableTypeEntity.hbm.xml"/>
+    <mapping resource="TablesEntity.hbm.xml"/>
+    <mapping resource="TransactionsEntity.hbm.xml"/>
+    <mapping resource="TransactionsTypeEntity.hbm.xml"/>
+    <mapping class="model.BookingsEntity"/>
+    <mapping class="model.BookingsInfoEntity"/>
+    <mapping class="model.DishEntity"/>
+    <mapping class="model.DishTypeEntity"/>
+    <mapping class="model.MenuEntity"/>
+    <mapping class="model.MenuNameEntity"/>
+    <mapping class="model.PermissionsEntity"/>
+    <mapping class="model.PersonsEntity"/>
+    <mapping class="model.SalariesEntity"/>
+    <mapping class="model.TableTypeEntity"/>
+    <mapping class="model.TablesEntity"/>
+    <mapping class="model.TransactionsEntity"/>
+    <mapping class="model.TransactionsTypeEntity"/>
+    <!-- <property name="connection.username"/> -->
+    <!-- <property name="connection.password"/> -->
+
+    <!-- DB schema will be updated if needed -->
+  </session-factory>
+</hibernate-configuration>

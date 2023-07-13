@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="model.DishEntity" table="dish" schema="restaurant_manager">
+        <id name="id">
+            <column name="id" sql-type="int"/>
+        </id>
+        <property name="dishName">
+            <column name="dish_name" sql-type="varchar(500)" length="500"/>
+        </property>
+        <property name="price">
+            <column name="price" sql-type="int"/>
+        </property>
+        <property name="dateCreat">
+            <column name="date_creat" sql-type="datetime"/>
+        </property>
+        <property name="dateUpdate">
+            <column name="date_update" sql-type="datetime"/>
+        </property>
+        <property name="flag">
+            <column name="flag" sql-type="int"/>
+        </property>
+        <property name="dishTypeId">
+            <column name="dish_type_id" sql-type="int"/>
+        </property>
+    </class>
+</hibernate-mapping>
