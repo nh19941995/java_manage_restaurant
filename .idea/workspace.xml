@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b9a29da-0f25-4281-8d51-46efd666c4bc" name="Changes" comment="test git 3">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6d5689f7-26c5-4745-9af7-3480114951fb.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_14_2023_6_16_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_14_2023_6_16_AM__Changes_.xml" afterDir="false" />
+    <list default="true" id="7b9a29da-0f25-4281-8d51-46efd666c4bc" name="Changes" comment="1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,9 +32,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/controller/TestGit.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -82,7 +77,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestGit">
+  <component name="RunManager" selected="Application.Test_BookingsEntityDAO">
     <configuration name="TestGit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.TestGit" />
       <module name="manage_restaurant" />
@@ -96,8 +91,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_DishTypeEntityDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test_DishTypeEntityDAO" />
+    <configuration name="Test_BookingsEntityDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test_BookingsEntityDAO" />
       <module name="manage_restaurant" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -126,11 +121,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test_BookingsEntityDAO" />
         <item itemvalue="Application.TestGit" />
         <item itemvalue="Application.Test_PermissionsEntityDAO" />
         <item itemvalue="Application.Test_MenuNameEntityDAO" />
         <item itemvalue="Application.Test_MenuEntityDAO" />
-        <item itemvalue="Application.Test_DishTypeEntityDAO" />
       </list>
     </recent_temporary>
   </component>
@@ -143,6 +138,7 @@
       <option name="presentableId" value="Default" />
       <updated>1689209452313</updated>
       <workItem from="1689209453747" duration="18907000" />
+      <workItem from="1689295988200" duration="56000" />
     </task>
     <task id="LOCAL-00001" summary="chưa gộp file">
       <created>1689288835925</created>
@@ -165,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689290832567</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="1">
+      <created>1689295083784</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1689295083784</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +190,7 @@
     <MESSAGE value="chưa gộp file" />
     <MESSAGE value="test git 2" />
     <MESSAGE value="test git 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="test git 3" />
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
 </project>
