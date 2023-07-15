@@ -1,21 +1,23 @@
 package dao;
 
+import model.DishEntity;
 import model.DishTypeEntity;
 import model.MenuEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import utils.HibernateUtil;
 
 import java.util.ArrayList;
 
-public class MenuEntityDAO implements DAOInterface{
+public class MenuEntityDAO implements DAOInterface<MenuEntity,MenuEntity>{
     public static MenuEntityDAO getInstance(){
         return new MenuEntityDAO();
     }
 
     @Override
-    public boolean insert(Object menu) {
+    public boolean insert(MenuEntity menu) {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
         try {
@@ -36,7 +38,31 @@ public class MenuEntityDAO implements DAOInterface{
     }
 
     @Override
-    public int update(Object o, Object o2) {
+    public int update(int id, MenuEntity newObject) {
+        Session session = null;
+        try {
+//            lấy ra qua id
+            session = HibernateUtil.getSessionFactory().openSession();
+            MenuEntity oldObject = session.get(MenuEntity.class, id);
+//            gán thay đổi
+            Transaction tx = session.beginTransaction();
+
+            oldObject.setMenuNameId(newObject.getMenuNameId());
+            oldObject.setDishId(newObject.getDishId());
+            oldObject.setQuantity(newObject.getQuantity());
+            oldObject.setUnitPrice(newObject.getUnitPrice());
+            oldObject.setDateCreat(newObject.getDateCreat());
+            oldObject.setFlag(newObject.getFlag());
+
+            tx.commit();
+        } catch (Exception e) {
+            e.printStackTrace(); // In thông tin ngoại lệ
+            throw e; // Ném lại ngoại lệ để thông báo cho lớp gọi xử lý ngoại lệ
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
         return 0;
     }
 
@@ -54,7 +80,7 @@ public class MenuEntityDAO implements DAOInterface{
     }
 
     @Override
-    public Object getById(int menuIndex) {
+    public MenuEntity getById(int menuIndex) {
         Session session = null;
         MenuEntity menu = null;
         try {

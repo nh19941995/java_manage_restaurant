@@ -1,21 +1,21 @@
 package dao;
 
-import model.MenuEntity;
 import model.MenuNameEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import utils.HibernateUtil;
 
 import java.util.ArrayList;
 
-public class MenuNameEntityDAO implements DAOInterface{
+public class MenuNameEntityDAO implements DAOInterface<MenuNameEntity,MenuNameEntity>{
     public static MenuNameEntityDAO getInstance(){
         return new MenuNameEntityDAO();
     }
 
     @Override
-    public boolean insert(Object menuName) {
+    public boolean insert(MenuNameEntity menuName) {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
         try {
@@ -36,7 +36,27 @@ public class MenuNameEntityDAO implements DAOInterface{
     }
 
     @Override
-    public int update(Object o, Object o2) {
+    public int update(int id, MenuNameEntity newObject) {
+        Session session = null;
+        try {
+//            lấy ra qua id
+            session = HibernateUtil.getSessionFactory().openSession();
+            MenuNameEntity oldObject = session.get(MenuNameEntity.class, id);
+//            gán thay đổi
+            Transaction tx = session.beginTransaction();
+
+            oldObject.setName(newObject.getName());
+            oldObject.setFlag(newObject.getFlag());
+
+            tx.commit();
+        } catch (Exception e) {
+            e.printStackTrace(); // In thông tin ngoại lệ
+            throw e; // Ném lại ngoại lệ để thông báo cho lớp gọi xử lý ngoại lệ
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
         return 0;
     }
 
@@ -54,7 +74,7 @@ public class MenuNameEntityDAO implements DAOInterface{
     }
 
     @Override
-    public Object getById(int menuNameIndex) {
+    public MenuNameEntity getById(int menuNameIndex) {
         Session session = null;
         MenuNameEntity menuName = null;
         try {

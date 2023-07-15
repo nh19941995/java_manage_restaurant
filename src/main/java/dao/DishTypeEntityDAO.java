@@ -4,18 +4,19 @@ import model.DishEntity;
 import model.DishTypeEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import utils.HibernateUtil;
 
 import java.util.ArrayList;
 
-public class DishTypeEntityDAO implements DAOInterface{
+public class DishTypeEntityDAO implements DAOInterface<DishTypeEntity,DishTypeEntity>{
     public static DishTypeEntityDAO getInstance(){
         return new DishTypeEntityDAO();
     }
 
     @Override
-    public boolean insert(Object dishType) {
+    public boolean insert(DishTypeEntity dishType) {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
         try {
@@ -36,7 +37,27 @@ public class DishTypeEntityDAO implements DAOInterface{
     }
 
     @Override
-    public int update(Object o, Object o2) {
+    public int update(int id, DishTypeEntity newObject) {
+        Session session = null;
+        try {
+//            lấy ra qua id
+            session = HibernateUtil.getSessionFactory().openSession();
+            DishTypeEntity oldObject = session.get(DishTypeEntity.class, id);
+//            gán thay đổi
+            Transaction tx = session.beginTransaction();
+
+            oldObject.setType(newObject.getType());
+            oldObject.setFlag(newObject.getFlag());
+
+            tx.commit();
+        } catch (Exception e) {
+            e.printStackTrace(); // In thông tin ngoại lệ
+            throw e; // Ném lại ngoại lệ để thông báo cho lớp gọi xử lý ngoại lệ
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
         return 0;
     }
 
@@ -54,7 +75,7 @@ public class DishTypeEntityDAO implements DAOInterface{
     }
 
     @Override
-    public Object getById(int dishTypeIndex) {
+    public DishTypeEntity getById(int dishTypeIndex) {
         Session session = null;
         DishTypeEntity dishType = null;
         try {

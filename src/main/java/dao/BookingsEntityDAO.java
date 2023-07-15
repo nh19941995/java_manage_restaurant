@@ -6,15 +6,16 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import utils.HibernateUtil;
+import org.hibernate.Transaction;
 
 import java.util.ArrayList;
 
-public class BookingsEntityDAO implements DAOInterface{
+public class BookingsEntityDAO implements DAOInterface <BookingsEntity, BookingsEntity>{
     public static BookingsEntityDAO getInstance(){
         return new BookingsEntityDAO();
     }
     @Override
-    public boolean insert(Object Booking) {
+    public boolean insert(BookingsEntity Booking) {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
         try {
@@ -35,7 +36,27 @@ public class BookingsEntityDAO implements DAOInterface{
     }
 
     @Override
-    public int update(Object o, Object o2) {
+    public int update(int Id, BookingsEntity newBooking) {
+        Session session = null;
+        try {
+//            lấy ra qua id
+            session = HibernateUtil.getSessionFactory().openSession();
+            BookingsEntity oldObject = session.get(BookingsEntity.class, Id);
+//            gán thay đổi
+            Transaction tx = session.beginTransaction();
+            oldObject.setInfoId(newBooking.getInfoId());
+            oldObject.setTableId(newBooking.getTableId());
+            oldObject.setMenuNameId(newBooking.getMenuNameId());
+            oldObject.setFlag(newBooking.getFlag());
+            tx.commit();
+        } catch (Exception e) {
+            e.printStackTrace(); // In thông tin ngoại lệ
+            throw e; // Ném lại ngoại lệ để thông báo cho lớp gọi xử lý ngoại lệ
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
         return 0;
     }
 
@@ -53,7 +74,7 @@ public class BookingsEntityDAO implements DAOInterface{
     }
 
     @Override
-    public Object getById(int indexBooking) {
+    public BookingsEntity getById(int indexBooking) {
         Session session = null;
         BookingsEntity booking = null;
         try {
@@ -67,6 +88,13 @@ public class BookingsEntityDAO implements DAOInterface{
                 session.close();
             }
         }
+        if (booking instanceof BookingsEntity) {
+            System.out.println("hàm chạy đúng");
+        } else {
+            System.out.println("hàm chạy sai");
+
+        }
+
         return booking;
     }
 }

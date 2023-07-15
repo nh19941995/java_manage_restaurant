@@ -5,8 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b9a29da-0f25-4281-8d51-46efd666c4bc" name="Changes" comment="1">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_14_2023_6_16_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_14_2023_6_16_AM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/PersonsEntityDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/SalariesEntityDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/TableTypeEntityDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/TablesEntityDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/TransactionsEntityDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/BookingsEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/BookingsEntityDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/BookingsInfoEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/BookingsInfoEntityDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAOInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DAOInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DishEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DishEntityDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DishTypeEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DishTypeEntityDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/MenuEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/MenuEntityDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/MenuNameEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/MenuNameEntityDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/PermissionsEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/PermissionsEntityDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/TransactionsTypeEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/TransactionsTypeEntityDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Test_BookingsEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test_BookingsEntityDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Test_TransactionsTypeEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test_TransactionsTypeEntityDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +47,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="origin" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,28 +63,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "true",
-    "JPA.DatabaseSchemaImportDialog": "6d5689f7-26c5-4745-9af7-3480114951fb",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.45517242"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;JPA.DatabaseSchemaImportDialog&quot;: &quot;6d5689f7-26c5-4745-9af7-3480114951fb&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nguye/IdeaProjects/Restaurant&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.45517242&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nguye\IdeaProjects\manage_restaurant\src\main\java\resources" />
@@ -78,7 +97,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test_DishTypeEntityDAO">
+  <component name="RunManager" selected="Application.Test_BookingsEntityDAO">
     <configuration name="TestGit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.TestGit" />
       <module name="manage_restaurant" />
@@ -113,8 +132,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_PermissionsEntityDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test_PermissionsEntityDAO" />
+    <configuration name="Test_TransactionsTypeEntityDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test_TransactionsTypeEntityDAO" />
       <module name="manage_restaurant" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -122,11 +141,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test_BookingsEntityDAO" />
+        <item itemvalue="Application.Test_TransactionsTypeEntityDAO" />
         <item itemvalue="Application.Test_DishTypeEntityDAO" />
         <item itemvalue="Application.Test_BookingsInfoEntity" />
-        <item itemvalue="Application.Test_BookingsEntityDAO" />
         <item itemvalue="Application.TestGit" />
-        <item itemvalue="Application.Test_PermissionsEntityDAO" />
       </list>
     </recent_temporary>
   </component>
@@ -141,6 +160,10 @@
       <workItem from="1689209453747" duration="18907000" />
       <workItem from="1689295988200" duration="56000" />
       <workItem from="1689297933982" duration="40000" />
+      <workItem from="1689329766346" duration="126000" />
+      <workItem from="1689422183695" duration="118000" />
+      <workItem from="1689422488450" duration="31000" />
+      <workItem from="1689423316472" duration="15724000" />
     </task>
     <task id="LOCAL-00001" summary="chưa gộp file">
       <created>1689288835925</created>

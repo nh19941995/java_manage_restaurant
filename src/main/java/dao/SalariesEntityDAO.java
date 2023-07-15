@@ -1,27 +1,27 @@
 package dao;
 
-import model.BookingsInfoEntity;
-import model.DishEntity;
+import model.PersonsEntity;
+import model.SalariesEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import utils.HibernateUtil;
 
-import javax.persistence.EntityManager;
 import java.util.ArrayList;
 
-public class DishEntityDAO implements DAOInterface<DishEntity,DishEntity>{
-    public static DishEntityDAO getInstance(){
-        return new DishEntityDAO();
+public class SalariesEntityDAO implements DAOInterface<SalariesEntity,SalariesEntity>{
+    public static SalariesEntityDAO getInstance(){
+        return new SalariesEntityDAO();
     }
+
     @Override
-    public boolean insert(DishEntity Dish) {
+    public boolean insert(SalariesEntity salary) {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
         try {
             session.beginTransaction();
-            session.save(Dish);
+            session.save(salary);
             session.getTransaction().commit();
             System.out.println("Done!");
             return true;
@@ -37,21 +37,19 @@ public class DishEntityDAO implements DAOInterface<DishEntity,DishEntity>{
     }
 
     @Override
-    public int update(int id, DishEntity newObject) {
+    public int update(int id, SalariesEntity salary) {
         Session session = null;
         try {
 //            lấy ra qua id
             session = HibernateUtil.getSessionFactory().openSession();
-            DishEntity oldObject = session.get(DishEntity.class, id);
+            SalariesEntity oldObject = session.get(SalariesEntity.class, id);
 //            gán thay đổi
             Transaction tx = session.beginTransaction();
 
-            oldObject.setDishName(newObject.getDishName());
-            oldObject.setDateCreat(newObject.getDateCreat());
-            oldObject.setPrice(newObject.getPrice());
-            oldObject.setDateUpdate(newObject.getDateUpdate());
-            oldObject.setDishTypeId(newObject.getDishTypeId());
-            oldObject.setFlag(newObject.getFlag());
+            oldObject.setPersonId(salary.getPersonId());
+            oldObject.setSalaryAmount(salary.getSalaryAmount());
+            oldObject.setEffectiveDate(salary.getEffectiveDate());
+            oldObject.setFlag(salary.getFlag());
 
             tx.commit();
         } catch (Exception e) {
@@ -66,25 +64,25 @@ public class DishEntityDAO implements DAOInterface<DishEntity,DishEntity>{
     }
 
     @Override
-    public ArrayList getAll() {
-        ArrayList<DishEntity> dishs = null;
+    public ArrayList<SalariesEntity> getAll() {
+        ArrayList<SalariesEntity> salaries = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            final String hql = "FROM DishEntity";
-            Query<DishEntity> query = session.createQuery(hql, DishEntity.class);
-            dishs = (ArrayList<DishEntity>) query.list();
+            final String hql = "FROM SalariesEntity";
+            Query<SalariesEntity> query = session.createQuery(hql, SalariesEntity.class);
+            salaries = (ArrayList<SalariesEntity>) query.list();
         } catch (RuntimeException e) {
             System.err.println("Error: " + e.getMessage());
         }
-        return dishs;
+        return salaries;
     }
 
     @Override
-    public DishEntity getById(int dishIndex) {
+    public SalariesEntity getById(int salaryIndex) {
         Session session = null;
-        DishEntity dish = null;
+        SalariesEntity salary = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
-            dish = session.get(DishEntity.class, dishIndex);
+            salary = session.get(SalariesEntity.class, salaryIndex);
         } catch (Exception e) {
             e.printStackTrace(); // In thông tin ngoại lệ
             throw e; // Ném lại ngoại lệ để thông báo cho lớp gọi xử lý ngoại lệ
@@ -93,6 +91,6 @@ public class DishEntityDAO implements DAOInterface<DishEntity,DishEntity>{
                 session.close();
             }
         }
-        return dish;
+        return salary;
     }
 }

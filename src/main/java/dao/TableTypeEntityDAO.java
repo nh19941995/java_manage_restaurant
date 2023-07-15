@@ -1,27 +1,26 @@
 package dao;
 
-import model.BookingsInfoEntity;
-import model.DishEntity;
+import model.TableTypeEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import utils.HibernateUtil;
 
-import javax.persistence.EntityManager;
 import java.util.ArrayList;
 
-public class DishEntityDAO implements DAOInterface<DishEntity,DishEntity>{
-    public static DishEntityDAO getInstance(){
-        return new DishEntityDAO();
+public class TableTypeEntityDAO implements DAOInterface <TableTypeEntity,TableTypeEntity>{
+    public static TableTypeEntityDAO getInstance(){
+        return new TableTypeEntityDAO();
     }
+
     @Override
-    public boolean insert(DishEntity Dish) {
+    public boolean insert(TableTypeEntity tableType) {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
         try {
             session.beginTransaction();
-            session.save(Dish);
+            session.save(tableType);
             session.getTransaction().commit();
             System.out.println("Done!");
             return true;
@@ -37,21 +36,18 @@ public class DishEntityDAO implements DAOInterface<DishEntity,DishEntity>{
     }
 
     @Override
-    public int update(int id, DishEntity newObject) {
+    public int update(int id, TableTypeEntity tableType) {
         Session session = null;
         try {
 //            lấy ra qua id
             session = HibernateUtil.getSessionFactory().openSession();
-            DishEntity oldObject = session.get(DishEntity.class, id);
+            TableTypeEntity oldObject = session.get(TableTypeEntity.class, id);
 //            gán thay đổi
             Transaction tx = session.beginTransaction();
 
-            oldObject.setDishName(newObject.getDishName());
-            oldObject.setDateCreat(newObject.getDateCreat());
-            oldObject.setPrice(newObject.getPrice());
-            oldObject.setDateUpdate(newObject.getDateUpdate());
-            oldObject.setDishTypeId(newObject.getDishTypeId());
-            oldObject.setFlag(newObject.getFlag());
+            oldObject.setName(tableType.getName());
+            oldObject.setComment(tableType.getComment());
+            oldObject.setFlag(tableType.getFlag());
 
             tx.commit();
         } catch (Exception e) {
@@ -66,25 +62,25 @@ public class DishEntityDAO implements DAOInterface<DishEntity,DishEntity>{
     }
 
     @Override
-    public ArrayList getAll() {
-        ArrayList<DishEntity> dishs = null;
+    public ArrayList<TableTypeEntity> getAll() {
+        ArrayList<TableTypeEntity> tableType = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            final String hql = "FROM DishEntity";
-            Query<DishEntity> query = session.createQuery(hql, DishEntity.class);
-            dishs = (ArrayList<DishEntity>) query.list();
+            final String hql = "FROM TableTypeEntity";
+            Query<TableTypeEntity> query = session.createQuery(hql, TableTypeEntity.class);
+            tableType = (ArrayList<TableTypeEntity>) query.list();
         } catch (RuntimeException e) {
             System.err.println("Error: " + e.getMessage());
         }
-        return dishs;
+        return tableType;
     }
 
     @Override
-    public DishEntity getById(int dishIndex) {
+    public TableTypeEntity getById(int tableTypeIndex) {
         Session session = null;
-        DishEntity dish = null;
+        TableTypeEntity tableType = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
-            dish = session.get(DishEntity.class, dishIndex);
+            tableType = session.get(TableTypeEntity.class, tableTypeIndex);
         } catch (Exception e) {
             e.printStackTrace(); // In thông tin ngoại lệ
             throw e; // Ném lại ngoại lệ để thông báo cho lớp gọi xử lý ngoại lệ
@@ -93,6 +89,6 @@ public class DishEntityDAO implements DAOInterface<DishEntity,DishEntity>{
                 session.close();
             }
         }
-        return dish;
+        return tableType;
     }
 }

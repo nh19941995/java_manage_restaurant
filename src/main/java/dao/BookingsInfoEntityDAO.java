@@ -4,17 +4,18 @@ import model.BookingsEntity;
 import model.BookingsInfoEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import utils.HibernateUtil;
 
 import java.util.ArrayList;
 
-public class BookingsInfoEntityDAO implements DAOInterface{
+public class BookingsInfoEntityDAO implements DAOInterface<BookingsInfoEntity,BookingsInfoEntity>{
     public static BookingsInfoEntityDAO getInstance(){
         return new BookingsInfoEntityDAO();
     }
     @Override
-    public boolean insert(Object bookingInfo) {
+    public boolean insert(BookingsInfoEntity bookingInfo) {
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
         try {
@@ -35,7 +36,32 @@ public class BookingsInfoEntityDAO implements DAOInterface{
     }
 
     @Override
-    public int update(Object o, Object o2) {
+    public int update(int id, BookingsInfoEntity newObject) {
+        Session session = null;
+        try {
+//            lấy ra qua id
+            session = HibernateUtil.getSessionFactory().openSession();
+            BookingsInfoEntity oldObject = session.get(BookingsInfoEntity.class, id);
+//            gán thay đổi
+            Transaction tx = session.beginTransaction();
+
+            oldObject.setPersonId(newObject.getPersonId());
+            oldObject.setInfo(newObject.getInfo());
+            oldObject.setDateCreat(newObject.getDateCreat());
+            oldObject.setStart(newObject.getStart());
+            oldObject.setEnd(newObject.getEnd());
+            oldObject.setDeposit(newObject.getDeposit());
+            oldObject.setFlag(newObject.getFlag());
+
+            tx.commit();
+        } catch (Exception e) {
+            e.printStackTrace(); // In thông tin ngoại lệ
+            throw e; // Ném lại ngoại lệ để thông báo cho lớp gọi xử lý ngoại lệ
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
         return 0;
     }
 
@@ -53,7 +79,7 @@ public class BookingsInfoEntityDAO implements DAOInterface{
     }
 
     @Override
-    public Object getById(int indexBookingInfo) {
+    public BookingsInfoEntity getById(int indexBookingInfo) {
         Session session = null;
         BookingsInfoEntity bookingInfo = null;
         try {
