@@ -66,10 +66,10 @@ public class SalariesEntity {
     public SalariesEntity() {
     }
 
-    public SalariesEntity(int personId, double salaryAmount, Timestamp effectiveDate, int flag) {
+    public SalariesEntity(int personId, double salaryAmount, String effectiveDate, int flag) {
         this.personId = personId;
         this.salaryAmount = salaryAmount;
-        this.effectiveDate = effectiveDate;
+        this.effectiveDate = Timestamp.valueOf(effectiveDate);
         this.flag = flag;
     }
 

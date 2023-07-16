@@ -4,26 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b9a29da-0f25-4281-8d51-46efd666c4bc" name="Changes" comment="1">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/PersonsEntityDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/SalariesEntityDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/TableTypeEntityDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/TablesEntityDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/TransactionsEntityDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="7b9a29da-0f25-4281-8d51-46efd666c4bc" name="Changes" comment="xong phần model và DAO">
+      <change afterPath="$PROJECT_DIR$/src/test/java/Test_PersonsEntityDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Test_SalariesEntityDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Test_TableTypeEntityDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Test_TablesEntityDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Test_TransactionsEntityDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/BookingsEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/BookingsEntityDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/BookingsInfoEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/BookingsInfoEntityDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DAOInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DAOInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DishEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DishEntityDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DishTypeEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DishTypeEntityDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/MenuEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/MenuEntityDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/MenuNameEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/MenuNameEntityDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/PermissionsEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/PermissionsEntityDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/TransactionsTypeEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/TransactionsTypeEntityDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/TransactionsEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/TransactionsEntityDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/PersonsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/PersonsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/SalariesEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/SalariesEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/TransactionsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/TransactionsEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Test_BookingsEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test_BookingsEntityDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Test_BookingsInfoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test_BookingsInfoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Test_DishEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test_DishEntityDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Test_DishTypeEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test_DishTypeEntityDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Test_MenuEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test_MenuEntityDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Test_MenuNameEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test_MenuNameEntityDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Test_PermissionsEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test_PermissionsEntityDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Test_TransactionsTypeEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test_TransactionsTypeEntityDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,43 +95,37 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test_BookingsEntityDAO">
-    <configuration name="TestGit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="controller.TestGit" />
-      <module name="manage_restaurant" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test_BookingsEntityDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test_BookingsEntityDAO" />
+  <component name="RunManager" selected="Application.Test_TransactionsEntityDAO">
+    <configuration name="Test_PersonsEntity" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test_PersonsEntity" />
       <module name="manage_restaurant" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_BookingsInfoEntity" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test_BookingsInfoEntity" />
+    <configuration name="Test_SalariesEntityDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test_SalariesEntityDAO" />
       <module name="manage_restaurant" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_DishTypeEntityDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test_DishTypeEntityDAO" />
+    <configuration name="Test_TableTypeEntityDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test_TableTypeEntityDAO" />
       <module name="manage_restaurant" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_TransactionsTypeEntityDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Test_TransactionsTypeEntityDAO" />
+    <configuration name="Test_TablesEntityDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test_TablesEntityDAO" />
+      <module name="manage_restaurant" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test_TransactionsEntityDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test_TransactionsEntityDAO" />
       <module name="manage_restaurant" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -141,11 +133,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Test_BookingsEntityDAO" />
-        <item itemvalue="Application.Test_TransactionsTypeEntityDAO" />
-        <item itemvalue="Application.Test_DishTypeEntityDAO" />
-        <item itemvalue="Application.Test_BookingsInfoEntity" />
-        <item itemvalue="Application.TestGit" />
+        <item itemvalue="Application.Test_TransactionsEntityDAO" />
+        <item itemvalue="Application.Test_TableTypeEntityDAO" />
+        <item itemvalue="Application.Test_TablesEntityDAO" />
+        <item itemvalue="Application.Test_SalariesEntityDAO" />
+        <item itemvalue="Application.Test_PersonsEntity" />
       </list>
     </recent_temporary>
   </component>
@@ -163,7 +155,7 @@
       <workItem from="1689329766346" duration="126000" />
       <workItem from="1689422183695" duration="118000" />
       <workItem from="1689422488450" duration="31000" />
-      <workItem from="1689423316472" duration="15724000" />
+      <workItem from="1689423316472" duration="21150000" />
     </task>
     <task id="LOCAL-00001" summary="chưa gộp file">
       <created>1689288835925</created>
@@ -193,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689295083784</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="xong phần model và DAO">
+      <created>1689449557508</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1689449557508</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,6 +215,7 @@
     <MESSAGE value="test git 2" />
     <MESSAGE value="test git 3" />
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="xong phần model và DAO" />
+    <option name="LAST_COMMIT_MESSAGE" value="xong phần model và DAO" />
   </component>
 </project>

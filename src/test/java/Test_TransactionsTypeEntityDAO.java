@@ -9,13 +9,13 @@ public class Test_TransactionsTypeEntityDAO{
 //        TransactionsTypeEntityDAO.getInstance().insert(new TransactionsTypeEntity("ddddddddddd","2023-07-13 10:30:00","2023-07-13 10:30:00",1));
 
 //        lấy ra toàn bộ bảng và tả về List
-        List<TransactionsTypeEntity> types = TransactionsTypeEntityDAO.getInstance().getAll();
-        for (TransactionsTypeEntity item: types){
-            System.out.println(item.toString());
-        }
+//        List<TransactionsTypeEntity> types = TransactionsTypeEntityDAO.getInstance().getAll();
+//        for (TransactionsTypeEntity item: types){
+//            System.out.println(item.toString());
+//        }
 
 //        lấy ra đối tượng qua id
 //        System.out.println("phần tử có id = 3 là: "+TransactionsTypeEntityDAO.getInstance().getById(3).toString());
-
+        TransactionsTypeEntityDAO.getInstance().update(4,new TransactionsTypeEntity("ssssssssssssssssss","2023-07-13 10:30:00","2023-07-13 10:30:00",1));
     }
 }

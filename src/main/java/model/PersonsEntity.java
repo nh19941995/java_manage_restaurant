@@ -133,16 +133,16 @@ public class PersonsEntity {
     public PersonsEntity() {
     }
 
-    public PersonsEntity(String name, Date dateOfBirth, String address, String username, String password, int permission, String email, Timestamp dateCreat, Timestamp dateUpdate, int flag) {
+    public PersonsEntity(String name, String dateOfBirth, String address, String username, String password, int permission, String email, String dateCreat, String dateUpdate, int flag) {
         this.name = name;
-        this.dateOfBirth = dateOfBirth;
+        this.dateOfBirth = Date.valueOf(dateOfBirth);
         this.address = address;
         this.username = username;
         this.password = password;
         this.permission = permission;
         this.email = email;
-        this.dateCreat = dateCreat;
-        this.dateUpdate = dateUpdate;
+        this.dateCreat = Timestamp.valueOf(dateCreat);
+        this.dateUpdate = Timestamp.valueOf(dateUpdate);
         this.flag = flag;
     }
 

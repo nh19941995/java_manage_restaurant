@@ -1,8 +1,11 @@
 package dao;
 
+import model.TableTypeEntity;
 import model.TransactionsEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import utils.HibernateUtil;
 
 import java.util.ArrayList;
@@ -34,17 +37,63 @@ public class TransactionsEntityDAO implements DAOInterface<TransactionsEntity,Tr
     }
 
     @Override
-    public int update(int id, TransactionsEntity transactionsEntity) {
+    public int update(int id, TransactionsEntity transactions) {
+        Session session = null;
+        try {
+//            lấy ra qua id
+            session = HibernateUtil.getSessionFactory().openSession();
+            TransactionsEntity oldObject = session.get(TransactionsEntity.class, id);
+//            gán thay đổi
+            Transaction tx = session.beginTransaction();
+
+            oldObject.setPersonId(transactions.getPersonId());
+            oldObject.setType(transactions.getType());
+            oldObject.setQuantity(transactions.getQuantity());
+            oldObject.setComment(transactions.getComment());
+            oldObject.setDateCreat(transactions.getDateCreat());
+            oldObject.setDateUpdate(transactions.getDateUpdate());
+            oldObject.setFlag(transactions.getFlag());
+
+            tx.commit();
+        } catch (Exception e) {
+            e.printStackTrace(); // In thông tin ngoại lệ
+            throw e; // Ném lại ngoại lệ để thông báo cho lớp gọi xử lý ngoại lệ
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
         return 0;
     }
 
     @Override
     public ArrayList<TransactionsEntity> getAll() {
-        return null;
+        ArrayList<TransactionsEntity> transactions = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            final String hql = "FROM TransactionsEntity";
+            Query<TransactionsEntity> query = session.createQuery(hql, TransactionsEntity.class);
+            transactions = (ArrayList<TransactionsEntity>) query.list();
+        } catch (RuntimeException e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+        return transactions;
     }
 
     @Override
-    public TransactionsEntity getById(int t) {
-        return null;
+    public TransactionsEntity getById(int transactionIndex) {
+        Session session = null;
+        TransactionsEntity transaction = null;
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            transaction = session.get(TransactionsEntity.class, transactionIndex);
+        } catch (Exception e) {
+            e.printStackTrace(); // In thông tin ngoại lệ
+            throw e; // Ném lại ngoại lệ để thông báo cho lớp gọi xử lý ngoại lệ
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+        return transaction;
     }
 }

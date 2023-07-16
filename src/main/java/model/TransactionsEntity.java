@@ -99,13 +99,13 @@ public class TransactionsEntity {
     public TransactionsEntity() {
     }
 
-    public TransactionsEntity(int personId, int type, double quantity, String comment, Timestamp dateCreat, Timestamp dateUpdate, int flag) {
+    public TransactionsEntity(int personId, int type, double quantity, String comment, String dateCreat, String dateUpdate, int flag) {
         this.personId = personId;
         this.type = type;
         this.quantity = quantity;
         this.comment = comment;
-        this.dateCreat = dateCreat;
-        this.dateUpdate = dateUpdate;
+        this.dateCreat = Timestamp.valueOf(dateCreat);
+        this.dateUpdate = Timestamp.valueOf(dateUpdate);
         this.flag = flag;
     }
 
