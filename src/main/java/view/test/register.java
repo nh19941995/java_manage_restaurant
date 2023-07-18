@@ -1,13 +1,10 @@
-package view;
+package view.test;
 
 import javax.swing.*;
 import java.awt.*;
 import javax.swing.JTextField;
 import javax.swing.JFrame;
-import javax.swing.border.Border;
-import javax.swing.*;
-import java.awt.*;
-import javax.swing.border.Border;
+
 public class register extends JFrame {
 //    khai báo thuộc tính là ô input
     private JTextField inputField;

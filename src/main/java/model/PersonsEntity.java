@@ -20,6 +20,11 @@ public class PersonsEntity {
     @Basic
     @Column(name = "address", nullable = false, length = 300)
     private String address;
+
+    @Basic
+    @Column(name = "phone", nullable = false, length = 20)
+    private String phone;
+
     @Basic
     @Column(name = "username", nullable = false, length = 150)
     private String username;
@@ -64,6 +69,14 @@ public class PersonsEntity {
 
     public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getAddress() {
@@ -133,10 +146,11 @@ public class PersonsEntity {
     public PersonsEntity() {
     }
 
-    public PersonsEntity(String name, String dateOfBirth, String address, String username, String password, int permission, String email, String dateCreat, String dateUpdate, int flag) {
+    public PersonsEntity(String name, String dateOfBirth, String address, String phone, String username, String password, int permission, String email, String dateCreat, String dateUpdate, int flag) {
         this.name = name;
         this.dateOfBirth = Date.valueOf(dateOfBirth);
         this.address = address;
+        this.phone = phone;
         this.username = username;
         this.password = password;
         this.permission = permission;
@@ -153,6 +167,7 @@ public class PersonsEntity {
                 ", name='" + name + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
                 ", address='" + address + '\'' +
+                ", phone=" + phone +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", permission=" + permission +
