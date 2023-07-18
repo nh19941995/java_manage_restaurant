@@ -2,6 +2,8 @@ package view.menu;
 
 import com.formdev.flatlaf.FlatLightLaf;
 import dao.PersonsEntityDAO;
+import view.Tool.Boder;
+import view.Tool.Grid;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -56,10 +58,43 @@ public class FormMenuClient extends JFrame {
         mainPanel.add(containerSearchPanel, BorderLayout.CENTER);
 
 //        phần thêm client----------------------------------------------------------------------------------------------
-//        JLabel searchByNameBTN = new JButton("Submit");
-//        JButton searchByPhoneBTN = new JButton("Submit");
-//        JTextField searchByName = new JTextField("Enter name",15);
-//        JTextField searchByPhone = new JTextField("Enter phone number",15);
+        JLabel  firstNameLabel = new JLabel ("First name");
+        JLabel  lastNameLabel = new JLabel ("Last Name");
+        JLabel  DOBLabel = new JLabel ("Date of birth");
+        JLabel  phoneLabel = new JLabel ("Phone number");
+        JLabel  emailLabel = new JLabel ("Email");
+        JLabel  addressLabel = new JLabel ("Address");
+
+        JTextField firstNameInput = new JTextField("Enter first name",25);
+        JTextField lastNameInput= new JTextField("Enter last Name",25);
+        JTextField DOBInput = new JTextField("Enter date of birth",25);
+        JTextField phoneInput = new JTextField("Enter phone number",25);
+        JTextField emailInput= new JTextField("Enter email",25);
+        JTextField addressInput = new JTextField("Enter address",25);
+        JButton addNewClientBTN = new JButton("Submit");
+        //        thêm phần tử vào panel và xác định vị trí
+        Grid jpaneAddClient = new Grid();
+
+        jpaneAddClient.GridAdd(firstNameLabel,0,0,30,50,20);
+        jpaneAddClient.GridAdd(lastNameLabel,0,1,30,50,20);
+        jpaneAddClient.GridAdd(DOBLabel,0,2,30,50,20);
+        jpaneAddClient.GridAdd(phoneLabel,0,3,30,50,20);
+        jpaneAddClient.GridAdd(emailLabel,0,4,30,50,20);
+        jpaneAddClient.GridAdd(addressLabel,0,5,30,50,20);
+
+        jpaneAddClient.GridAdd(firstNameInput,1,0,30,50,20);
+        jpaneAddClient.GridAdd(lastNameInput,1,1,30,50,20);
+        jpaneAddClient.GridAdd(DOBInput,1,2,30,50,20);
+        jpaneAddClient.GridAdd(phoneInput,1,3,30,50,20);
+        jpaneAddClient.GridAdd(emailInput,1,4,30,50,20);
+        jpaneAddClient.GridAdd(addressInput,1,5,30,50,20);
+        jpaneAddClient.GridAdd(addNewClientBTN,1,6,250,50,40);
+
+        //        Tạo panel container
+        Boder containerJpaneAddClient = new Boder();
+        containerJpaneAddClient.add(jpaneAddClient,BorderLayout.CENTER);
+//        containerJpaneAddClient.add(addNewClientBTN,BorderLayout.SOUTH);
+
 
 
 
@@ -121,6 +156,7 @@ public class FormMenuClient extends JFrame {
         tabbedPane.addTab("Add new", tab2);
         //        đặt layout cho tab
         tab1.setLayout(new BorderLayout());
+        tab2.setLayout(new BorderLayout());
         //        thêm các phần tử cho từng tab
         // thêm toàn bộ phần tìm kiếm vào tab 1
         tab1.add(containerSearchPanel,BorderLayout.NORTH);
@@ -128,6 +164,7 @@ public class FormMenuClient extends JFrame {
         tab1.add(table_Panel,BorderLayout.CENTER);
         // thêm nút bấm vào tab 1
         tab1.add(submitSelectClient,BorderLayout.SOUTH);
+        tab2.add(containerJpaneAddClient,BorderLayout.CENTER);
         // thêm toàn bộ phần tab vao trung tâm Jframe
         mainPanel.add(tabbedPane, BorderLayout.CENTER);
 

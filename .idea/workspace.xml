@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b9a29da-0f25-4281-8d51-46efd666c4bc" name="Changes" comment="bắt đầu sửa phần search bar">
-      <change afterPath="$PROJECT_DIR$/src/test/java/test_form.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/test_form.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="7b9a29da-0f25-4281-8d51-46efd666c4bc" name="Changes" comment="xong form select client">
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/Tool/Boder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/Tool/Grid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/menu/FormMenuClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/menu/FormMenuClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/test/GridBagLayoutExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/test/GridBagLayoutExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/test/h.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/test/h.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +103,7 @@
       <module name="manage_restaurant" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="view.login.*" />
+          <option name="PATTERN" value="view.Tool.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -184,7 +180,7 @@
       <workItem from="1689593069637" duration="23185000" />
       <workItem from="1689633817791" duration="5022000" />
       <workItem from="1689642675332" duration="10737000" />
-      <workItem from="1689680663886" duration="7072000" />
+      <workItem from="1689680663886" duration="14505000" />
     </task>
     <task id="LOCAL-00001" summary="chưa gộp file">
       <created>1689288835925</created>
@@ -242,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689644175260</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="xong form select client">
+      <created>1689687983089</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1689687983089</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,6 +272,7 @@
     <MESSAGE value="xong phần test" />
     <MESSAGE value="xong phần test và một ít phần view" />
     <MESSAGE value="bắt đầu sửa phần search bar" />
-    <option name="LAST_COMMIT_MESSAGE" value="bắt đầu sửa phần search bar" />
+    <MESSAGE value="xong form select client" />
+    <option name="LAST_COMMIT_MESSAGE" value="xong form select client" />
   </component>
 </project>
