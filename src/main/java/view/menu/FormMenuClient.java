@@ -1,43 +1,72 @@
 package view.menu;
-import javax.swing.UIManager;
-import dao.PersonsEntityDAO;
-import model.PersonsEntity;
-import javax.swing.*;
-import java.awt.*;
+
 import com.formdev.flatlaf.FlatLightLaf;
-import javax.swing.JTabbedPane;
+import dao.PersonsEntityDAO;
+
+import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
+import java.awt.*;
 
 public class FormMenuClient extends JFrame {
-    PersonsEntity persons = new PersonsEntity();
     public FormMenuClient(){
-//        khung ngoài phần mềm-----------------------------------------------------------------------------------
-        this.setTitle("Register");          //        tiêu đề cho form
-        this.setSize(600,400);  //        đặt kích thước của nó là 300 pixel chiều rộng và 600 pixel chiều cao.
-        this.setLocationRelativeTo(null);   //        đặt vị trí của cửa sổ JFrame ở giữa màn hình.
-        JFrame frame = new JFrame();
+//        khung ngoài phần mềm------------------------------------------------------------------------------------------
+        setTitle("Register");             //        tiêu đề cho form
+        // Tạo panel chính, mainPanel là một JPanel chứa toàn bộ giao diện của ứng dụng
+        JPanel mainPanel = new JPanel();
+        mainPanel.setLayout(new BorderLayout());
+        //        mainPanel.setBackground(Color.gray);
 
-//        tạo layout phần tìm kiếm-------------------------------------------------------------------------------
-        JPanel searchBar_Panel = new JPanel();
-
-        GridBagLayout layout   = new GridBagLayout();
+//        Phần tìm kiếm-------------------------------------------------------------------------------------------------
+        JButton searchByNameBTN = new JButton("Submit");
+        JButton searchByPhoneBTN = new JButton("Submit");
+        JTextField searchByName = new JTextField("Enter name",15);
+        JTextField searchByPhone = new JTextField("Enter phone number",15);
+        //        layout chính cho phần tìm kiếm
+        JPanel containerSearchPanel = new JPanel();
+        //        containerSearchPanel.setBackground(Color.ORANGE);
+        containerSearchPanel.setLayout(new BorderLayout());
+        //        layout phụ cho phần tìm kiếm
+        JPanel searchPanel = new JPanel();
+        //        searchPanel.setBackground(Color.yellow);
+        //        tạo đối tượng cho layout GridBagLayout
+        GridBagLayout gridBagLayout   = new GridBagLayout();
         GridBagConstraints gbc = new GridBagConstraints();
+        //        Tạo đối tượng Insets để định nghĩa padding
+        Insets paddingInput = new Insets(10, 20, 10, 10);
+        Insets paddingBTN = new Insets(10, 10, 10, 10);
+        searchPanel.setLayout(gridBagLayout);
+        //        padding cho tất cả các phần tử ở sau
+        gbc.insets = paddingInput;
+        //        đặt tọa độ cho phần tử
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        searchPanel.add(searchByName, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        searchPanel.add(searchByPhone, gbc);
+        gbc.insets = paddingBTN;
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        searchPanel.add(searchByNameBTN, gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+        searchPanel.add(searchByPhoneBTN, gbc);
+        containerSearchPanel.setLayout(new BorderLayout());
+        containerSearchPanel.add(searchPanel,BorderLayout.WEST);
+        mainPanel.add(containerSearchPanel, BorderLayout.CENTER);
+
+//        phần thêm client----------------------------------------------------------------------------------------------
+//        JLabel searchByNameBTN = new JButton("Submit");
+//        JButton searchByPhoneBTN = new JButton("Submit");
+//        JTextField searchByName = new JTextField("Enter name",15);
+//        JTextField searchByPhone = new JTextField("Enter phone number",15);
 
 
 
-        BoxLayout boxlayout = new BoxLayout(searchBar_Panel, BoxLayout.X_AXIS); // Tạo Boxlayout với hằng số X_AXIS
 
-        searchBar_Panel.setLayout(boxlayout);
-//        Tạo các Button
-        JTextField searchByName = new JTextField(50);
-        JTextField searchByPhone = new JTextField(50);
-//        Thêm Button vào Panel
-        searchBar_Panel.add(searchByName);
-        searchBar_Panel.add(searchByPhone);
 
-//        tạo layout phần bảng-------------------------------------------------------------------------------------
+//        Phần bảng ----------------------------------------------------------------------------------------------------
         JPanel table_Panel = new JPanel();
-//        table_Panel.setBackground(Color.GREEN);
-//         Tạo dữ liệu cho bảng
         Object[][] data = PersonsEntityDAO.getInstance().getAll().stream().map(
                 s->new Object[]{
                         s.getId(),
@@ -51,86 +80,76 @@ public class FormMenuClient extends JFrame {
                         s.getFlag()
                 }
         ).toArray(Object[][]::new);
-//        Tiêu đề cột
+        //        Tiêu đề cột
         Object[] columnNames = {"ID", "Name", "Date of brith","Phone number","Username","Email","Date creat","Date update"};
-
-//        Tạo JFrame và thêm JScrollPane chứa bảng vào
-//        Tạo một JTable với dữ liệu và tiêu đề cột
+        //        Tạo một JTable với dữ liệu và tiêu đề cột
         JTable table = new JTable(data, columnNames);
+        //        căn giữa chữ trong bảng
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+        for (int i = 0; i < table.getColumnCount(); i++) {
+            table.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+        }
+        // Thiết lập chiều rộng cho các cột
+        table.getColumnModel().getColumn(0).setMinWidth(30); // Cột ID
+        table.getColumnModel().getColumn(0).setMaxWidth(50); // Cột ID
 
-//        Tạo một JScrollPane để chứa bảng
+        table.getColumnModel().getColumn(1).setMinWidth(150); // Cột Name
+        table.getColumnModel().getColumn(1).setMaxWidth(200); // Cột Name
+
+        table.getColumnModel().getColumn(2).setMinWidth(100); // Cột ngày sinh
+        table.getColumnModel().getColumn(2).setMaxWidth(150); // Cột ngày sinh
+
+        table.getColumnModel().getColumn(3).setMinWidth(100);
+        table.getColumnModel().getColumn(3).setMaxWidth(150);
+
+        table.getColumnModel().getColumn(4).setMinWidth(100);
+        table.getColumnModel().getColumn(4).setMaxWidth(150);
+        //        Tạo một JScrollPane để chứa bảng (thanh cuộn trang)
         JScrollPane scrollPane = new JScrollPane(table);
-//         Đặt cài đặt cuộn theo yêu cầu cho JScrollPane
-//        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-
-//        Đặt layout cho table_Panel là BorderLayout
+        //        Đặt layout cho table_Panel là BorderLayout
         table_Panel.setLayout(new BorderLayout());
         table_Panel.add(scrollPane, BorderLayout.CENTER);
 
-//        layout chuyển tab --------------------------------------------------------------------------------------------------------------
-
-//        tạo các tab
-        JPanel tab_Panel = new JPanel();
+//        phần tab chuyển đổi-------------------------------------------------------------------------------------------
+        //        tạo đối tượng tab
         JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.LEFT);
         JPanel tab1 = new JPanel();
         JPanel tab2 = new JPanel();
+        JButton submitSelectClient = new JButton("Submit");
         tabbedPane.addTab("Select menu", tab1);
         tabbedPane.addTab("Add new", tab2);
-
-//        ++++++++++++++++ tab select menu +++++++++++++++
-        JButton submitSelectClient = new JButton("Submit");
-//        đặt layout cho tab
+        //        đặt layout cho tab
         tab1.setLayout(new BorderLayout());
-//        thêm các phần tử cho tab
-        tab1.add(searchBar_Panel,BorderLayout.NORTH);
+        //        thêm các phần tử cho từng tab
+        // thêm toàn bộ phần tìm kiếm vào tab 1
+        tab1.add(containerSearchPanel,BorderLayout.NORTH);
+        // thêm bảng vào tab 1
         tab1.add(table_Panel,BorderLayout.CENTER);
+        // thêm nút bấm vào tab 1
         tab1.add(submitSelectClient,BorderLayout.SOUTH);
+        // thêm toàn bộ phần tab vao trung tâm Jframe
+        mainPanel.add(tabbedPane, BorderLayout.CENTER);
 
-
-//        tab2.add(table_Panel,BorderLayout.CENTER);
-        frame.getContentPane().add(tabbedPane);
-
-        frame.pack();
-        frame.setVisible(true);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//        hiển thị phần mềm--------------------------------------------------------------------------------------------------------------
-
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //        khi người dùng đóng cửa sổ, ứng dụng sẽ kết thúc và thoát khỏi chương trình.
-        frame.setVisible(true);                               //        được sử dụng để hiển thị cửa sổ JFrame trên màn hình. Khi bạn gọi phương thức này với giá trị true, cửa sổ sẽ trở nên hiển thị.
-
+//        Đảm bảo các thành phần giao diện được hiển thị----------------------------------------------------------------
+        //        thêm mainPanel vào cửa sổ JFrame
+        add(mainPanel);
+        revalidate();
+        repaint();
+        setSize(1500, 900);
+        setLocationRelativeTo(null);
+        //        setBackground(Color.BLUE);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-
-
 
     public static void main(String[] args) {
         try {
 //            chuyển giao diện sang giống ios
             UIManager.setLookAndFeel(new FlatLightLaf());
-            new FormMenuClient();
+            FormMenuClient menuClient = new FormMenuClient();
         }catch (Exception e){
-
+            e.printStackTrace();
         }
     }
 }

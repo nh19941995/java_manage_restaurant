@@ -13,6 +13,7 @@ public class GridBagLayoutExample extends JFrame{
 //        tạo một layout
 //        GridBagLayout grid     = new GridBagLayout();
         GridBagLayout layout   = new GridBagLayout();
+
         GridBagConstraints gbc = new GridBagConstraints();
 
 //        setLayout(grid);
