@@ -17,6 +17,15 @@
         <property name="address">
             <column name="address" sql-type="varchar(300)" length="300"/>
         </property>
+
+
+
+        <property name="phone">
+            <column name="phone" sql-type="varchar(20)" length="20"/>
+        </property>
+
+
+
         <property name="username">
             <column name="username" sql-type="varchar(150)" length="150"/>
         </property>

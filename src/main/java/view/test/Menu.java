@@ -1,4 +1,4 @@
-package view.menu;
+package view.test;
 
 
 import javax.swing.*;

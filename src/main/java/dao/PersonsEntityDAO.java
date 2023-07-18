@@ -48,6 +48,7 @@ public class PersonsEntityDAO implements DAOInterface<PersonsEntity,PersonsEntit
             oldObject.setName(person.getName());
             oldObject.setDateOfBirth(person.getDateOfBirth());
             oldObject.setAddress(person.getAddress());
+            oldObject.setPhone(person.getPhone());
             oldObject.setUsername(person.getUsername());
             oldObject.setPassword(person.getPassword());
             oldObject.setPermission(person.getPermission());
