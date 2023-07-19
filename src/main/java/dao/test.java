@@ -1,8 +1,6 @@
 package dao;
 
 import model.BookingsEntity;
-import model.DishTypeEntity;
-
 import java.util.ArrayList;
 
 public class test implements DAOInterface<BookingsEntity, BookingsEntity>{

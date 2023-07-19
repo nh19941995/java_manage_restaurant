@@ -1,14 +1,35 @@
 package view.menu;
 
 import com.formdev.flatlaf.FlatLightLaf;
+import dao.*;
+import model.BookingsEntity;
 import view.Tool.Boder;
-import view.Tool.Flow;
 import view.Tool.Grid;
+import java.util.List;
 
 import javax.swing.*;
 import java.awt.*;
 
+
 public class FormBooking extends JFrame {
+//    JTable table;
+
+    public void setTable() {
+        List<BookingsEntity> menuNameEntities = BookingsEntityDAO.getInstance().getAll();
+        //        Tiêu đề cột
+//        Object[] columnNames = {"Booking ID", "Reservation Name", "Phone number","Menu name","Table Type","Capacity","Start","End", "Deposit"};
+        Object[] columnNames = {"Booking ID", "Infor ID", "Table ID","Menu name ID","Flag"};
+        Object[][] data = menuNameEntities.stream().map(
+                s->new Object[]{
+                        s.getId(),
+                        s.getInfoId(),
+                        s.getTableId(),
+                        s.getMenuNameId(),
+                        s.getFlag()
+                }
+        ).toArray(Object[][]::new);
+    }
+
     public FormBooking(){
 //        khung ngoài phần mềm------------------------------------------------------------------------------------------
         setTitle("Register");             //        tiêu đề cho form
@@ -16,6 +37,46 @@ public class FormBooking extends JFrame {
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
         mainPanel.setBackground(Color.decode("#293740"));
+//        nội dung cho phần booking-------------------------------------------------------------------------------------
+        Boder mainContentBooking = new Boder();
+        mainContentBooking.setBackground(Color.decode("#EB5454"));
+        // phần infomartion---------------------------------------------------------
+        // phần tiêu đề
+        JLabel labelTitle = new JLabel ("BOOKING INFORMATION");
+        Grid jpaneBookingInfoTitle = new Grid();
+        jpaneBookingInfoTitle.GridAdd(labelTitle,0,0,0,0,20);
+        // phần bảng----------------------------------------------------------------
+        // stream lấy đữ liệu
+
+//        Boder boderTable = new Boder();
+
+        List<BookingsEntity> menuNameEntities = BookingsEntityDAO.getInstance().getAll();
+
+
+        Object[][] data = menuNameEntities.stream().map(
+                s->new Object[]{
+                        s.getId(),
+                        s.getMenuNameId(),
+
+                }
+        ).toArray(Object[][]::new);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //        phần tab chuyển-----------------------------------------------------------------------------------------------
         //        tạo đối tượng tab
@@ -30,6 +91,7 @@ public class FormBooking extends JFrame {
         tabbedPane.addTab("Booking", tab3);
         tabbedPane.addTab("Manage", tab4);
         tabbedPane.addTab("Menu", tab5);
+        tab3.add(mainContentBooking,BorderLayout.CENTER);
         tabbedPane.setTabComponentAt(0, new JLabel("Employee"));
         tabbedPane.setTabComponentAt(1, new JLabel("Transaction"));
         tabbedPane.setTabComponentAt(2, new JLabel("Booking"));
@@ -77,6 +139,7 @@ public class FormBooking extends JFrame {
         }
         // thay đổi màu nền của tab
         tabbedPane.setBackground(Color.decode("#293740"));
+
         // thêm các tab vào layout chính
         mainPanel.add(tabbedPane, BorderLayout.CENTER);
 
@@ -109,7 +172,7 @@ public class FormBooking extends JFrame {
         try {
 //            chuyển giao diện sang giống ios
             UIManager.setLookAndFeel(new FlatLightLaf());
-            FormBooking booking = new FormBooking();
+            new FormBooking();
         }catch (Exception e){
             e.printStackTrace();
         }

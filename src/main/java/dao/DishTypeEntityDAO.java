@@ -1,6 +1,5 @@
 package dao;
 
-import model.DishEntity;
 import model.DishTypeEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -62,7 +61,7 @@ public class DishTypeEntityDAO implements DAOInterface<DishTypeEntity,DishTypeEn
     }
 
     @Override
-    public ArrayList getAll() {
+    public ArrayList<DishTypeEntity> getAll() {
         ArrayList<DishTypeEntity> dishsType = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             final String hql = "FROM DishTypeEntity";
@@ -77,7 +76,7 @@ public class DishTypeEntityDAO implements DAOInterface<DishTypeEntity,DishTypeEn
     @Override
     public DishTypeEntity getById(int dishTypeIndex) {
         Session session = null;
-        DishTypeEntity dishType = null;
+        DishTypeEntity dishType;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             dishType = session.get(DishTypeEntity.class, dishTypeIndex);

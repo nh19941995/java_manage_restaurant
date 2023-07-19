@@ -1,10 +1,12 @@
 package view.menu;
 
 import com.formdev.flatlaf.FlatLightLaf;
+import dao.MenuNameEntityDAO;
 import dao.PersonsEntityDAO;
+import model.PersonsEntity;
 import view.Tool.Boder;
 import view.Tool.Grid;
-
+import java.util.List;
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.*;
@@ -115,6 +117,9 @@ public class FormMenuClient extends JFrame {
                         s.getFlag()
                 }
         ).toArray(Object[][]::new);
+
+
+
         //        Tiêu đề cột
         Object[] columnNames = {"ID", "Name", "Date of brith","Phone number","Username","Email","Date creat","Date update"};
         //        Tạo một JTable với dữ liệu và tiêu đề cột

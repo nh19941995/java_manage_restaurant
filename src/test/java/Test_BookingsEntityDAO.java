@@ -1,5 +1,4 @@
-import dao.BookingsEntityDAO;
-import dao.TransactionsTypeEntityDAO;
+import dao.*;
 import model.BookingsEntity;
 import model.TransactionsTypeEntity;
 
@@ -15,6 +14,7 @@ public class Test_BookingsEntityDAO {
         for (BookingsEntity item: bookings){
             System.out.println(item.toString());
         }
+
 
 //        lấy ra đối tượng qua id
         System.out.println("phần tử có id = 2 là: "+BookingsEntityDAO.getInstance().getById(2).toString());

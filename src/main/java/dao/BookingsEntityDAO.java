@@ -88,12 +88,6 @@ public class BookingsEntityDAO implements DAOInterface <BookingsEntity, Bookings
                 session.close();
             }
         }
-        if (booking instanceof BookingsEntity) {
-            System.out.println("hàm chạy đúng");
-        } else {
-            System.out.println("hàm chạy sai");
-
-        }
 
         return booking;
     }
