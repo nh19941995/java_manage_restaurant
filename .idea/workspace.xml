@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b9a29da-0f25-4281-8d51-46efd666c4bc" name="Changes" comment="xong form select client">
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/Tool/Boder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/Tool/Grid.java" afterDir="false" />
+    <list default="true" id="7b9a29da-0f25-4281-8d51-46efd666c4bc" name="Changes" comment="viết xong hai tool cho form là grit và boder + xong form client">
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/Tool/Flow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/menu/FormBooking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/menu/FormMenuClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/menu/FormMenuClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +83,20 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.FormMenuClient">
+  <component name="RunManager" selected="Application.FormBooking">
+    <configuration name="FormBooking" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.menu.FormBooking" />
+      <module name="manage_restaurant" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="view.menu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FormMenuClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="view.menu.FormMenuClient" />
       <module name="manage_restaurant" />
@@ -104,19 +116,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="view.Tool.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="h" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="view.test.h" />
-      <module name="manage_restaurant" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="view.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -152,11 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FormBooking" />
         <item itemvalue="Application.FormMenuClient" />
-        <item itemvalue="Application.ssss" />
-        <item itemvalue="Application.h" />
-        <item itemvalue="Application.Login" />
         <item itemvalue="Application.x" />
+        <item itemvalue="Application.ssss" />
+        <item itemvalue="Application.Login" />
       </list>
     </recent_temporary>
   </component>
@@ -273,6 +272,7 @@
     <MESSAGE value="xong phần test và một ít phần view" />
     <MESSAGE value="bắt đầu sửa phần search bar" />
     <MESSAGE value="xong form select client" />
-    <option name="LAST_COMMIT_MESSAGE" value="xong form select client" />
+    <MESSAGE value="viết xong hai tool cho form là grit và boder + xong form client" />
+    <option name="LAST_COMMIT_MESSAGE" value="viết xong hai tool cho form là grit và boder + xong form client" />
   </component>
 </project>
