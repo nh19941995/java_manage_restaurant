@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b9a29da-0f25-4281-8d51-46efd666c4bc" name="Changes" comment="xong phần tab cho menu booking">
+    <list default="true" id="7b9a29da-0f25-4281-8d51-46efd666c4bc" name="Changes" comment="sửa toàn bộ lỗi còn tồn tại">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_14_2023_6_16_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_7_14_2023_6_16_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/BookingsEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/BookingsEntityDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/DishTypeEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DishTypeEntityDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/menu/FormBooking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/menu/FormBooking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/menu/FormMenuClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/menu/FormMenuClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Test_BookingsEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test_BookingsEntityDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/DishEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/DishEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/DishEntity.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DishEntity.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/DishTypeEntity.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DishTypeEntity.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Test_DishEntityDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test_DishEntityDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +86,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test_BookingsEntityDAO">
+  <component name="RunManager" selected="Application.Test_DishEntityDAO">
     <configuration name="FormBooking" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="view.menu.FormBooking" />
       <module name="manage_restaurant" />
@@ -121,15 +120,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ssss" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="view.test.ssss" />
+    <configuration name="Test_DishEntityDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test_DishEntityDAO" />
       <module name="manage_restaurant" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="view.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -149,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test_DishEntityDAO" />
         <item itemvalue="Application.Test_BookingsEntityDAO" />
         <item itemvalue="Application.FormBooking" />
         <item itemvalue="Application.FormMenuClient" />
         <item itemvalue="Application.x" />
-        <item itemvalue="Application.ssss" />
       </list>
     </recent_temporary>
   </component>

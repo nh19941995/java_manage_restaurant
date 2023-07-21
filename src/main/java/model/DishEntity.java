@@ -20,7 +20,8 @@ public class DishEntity {
     @Column(name = "date_creat", nullable = false)
     private Timestamp dateCreat;
     @Basic
-    @Column(name = "date_update", nullable = false)
+    @Column(name = "date_update", nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
+    @org.hibernate.annotations.UpdateTimestamp
     private Timestamp dateUpdate;
     @Basic
     @Column(name = "flag", nullable = false)
